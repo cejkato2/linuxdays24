@@ -21,4 +21,10 @@ class ldmodule_tests(unittest.TestCase):
         except ldpymod.GeneralError:
             pass
 
+class ldobject_tests(unittest.TestCase):
+    def runTest(self):
+        import ldpymod
+
+        o = ldpymod.LinuxDaysObj()
+
 

@@ -1,0 +1,24 @@
+#ifndef LDPYMOD_OBJECT_H
+#define LDPYMOD_OBJECT_H
+
+#include <Python.h>
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
+typedef struct {
+    PyObject_HEAD
+    /* user-defined data: */
+    uint32_t counter;
+} LinuxDaysObj_s;
+
+PyAPI_DATA(PyTypeObject) LinuxDaysObj;
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif
+

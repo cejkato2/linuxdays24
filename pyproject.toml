@@ -9,7 +9,7 @@ authors = [ {name = "Tomas Cejka", email = "cejkat@cesnet.cz"} ]
 
 [tool.setuptools]
 ext-modules = [
-  {name = "ldpymod", sources = ["src/ldpymod.c"]}
+  {name = "ldpymod", sources = ["src/ldpymod.c", "src/object.c"]}
 ]
 
 [tool.tox]

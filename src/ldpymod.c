@@ -1,6 +1,7 @@
 #include <Python.h>
 #include <stddef.h>
 #include "ldpymod.h"
+#include "object.h"
 
 PyObject *GeneralError;
 PyObject *SpecificError;
@@ -43,6 +44,12 @@ PyInit_ldpymod(void)
     if (m == NULL) {
         return NULL;
     }
+
+    if (PyType_Ready(&LinuxDaysObj) < 0) {
+        return NULL;
+    }
+    Py_INCREF(&LinuxDaysObj);
+    PyModule_AddObject(m, "LinuxDaysObj", (PyObject *) &LinuxDaysObj);
 
     /* Add Exceptions into pytrap module */
     GeneralError = PyErr_NewException("ldpymod.GeneralError", NULL, NULL);
