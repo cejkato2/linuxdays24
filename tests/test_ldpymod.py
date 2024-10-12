@@ -9,3 +9,6 @@ class ldmodule_tests(unittest.TestCase):
         except ImportError as e:
             self.fail(str(e))
 
+        self.assertEqual(ldpymod.hello(), ("Hello world!", 1234))
+
+
