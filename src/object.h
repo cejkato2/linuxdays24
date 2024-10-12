@@ -1,6 +1,7 @@
 #ifndef LDPYMOD_OBJECT_H
 #define LDPYMOD_OBJECT_H
 
+#include <Python.h>
 
 #ifdef __cplusplus
 extern "C" {

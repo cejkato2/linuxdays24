@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ldpymod"
+version = "0.1"
+authors = [ {name = "Tomas Cejka", email = "cejkat@cesnet.cz"} ]
+
+[tool.setuptools]
+ext-modules = [
+  {name = "ldpymod", sources = ["src/ldpymod.c", "src/object.c"]}
+]
+
+[tool.tox]
+requires = ["tox>=4.19", "pytest"]
+env_list = ["type"]
+
+[tool.tox.env_run_base]
+description = "Run test under {base_python}"
+deps = ["pytest"]
+commands = [["pytest"]]
+
