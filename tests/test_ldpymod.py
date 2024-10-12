@@ -13,4 +13,12 @@ class ldmodule_tests(unittest.TestCase):
 
         self.assertEqual(ldpymod.FMT_JSON, 2)
 
+        exc = ldpymod.GeneralError()
+        exc2 = ldpymod.SpecificError()
+
+        try:
+            raise exc2
+        except ldpymod.GeneralError:
+            pass
+
 

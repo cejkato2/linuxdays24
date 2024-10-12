@@ -1,5 +1,9 @@
 #include <Python.h>
 #include <stddef.h>
+#include "ldpymod.h"
+
+PyObject *GeneralError;
+PyObject *SpecificError;
 
 PyObject *
 ldpymod_hello(PyObject *self)
@@ -39,6 +43,15 @@ PyInit_ldpymod(void)
     if (m == NULL) {
         return NULL;
     }
+
+    /* Add Exceptions into pytrap module */
+    GeneralError = PyErr_NewException("ldpymod.GeneralError", NULL, NULL);
+    Py_INCREF(GeneralError);
+    PyModule_AddObject(m, "GeneralError", GeneralError);
+
+    SpecificError = PyErr_NewException("ldpymod.SpecificError", GeneralError, NULL);
+    Py_INCREF(SpecificError);
+    PyModule_AddObject(m, "SpecificError", SpecificError);
 
     /* Add constants into pytrap module */
     PyModule_AddIntConstant(m, "FMT_RAW", 1);
