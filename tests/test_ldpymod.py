@@ -11,4 +11,6 @@ class ldmodule_tests(unittest.TestCase):
 
         self.assertEqual(ldpymod.hello(), ("Hello world!", 1234))
 
+        self.assertEqual(ldpymod.FMT_JSON, 2)
+
 

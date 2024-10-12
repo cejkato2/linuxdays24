@@ -40,5 +40,9 @@ PyInit_ldpymod(void)
         return NULL;
     }
 
+    /* Add constants into pytrap module */
+    PyModule_AddIntConstant(m, "FMT_RAW", 1);
+    PyModule_AddIntConstant(m, "FMT_JSON", 2);
     return m;
 }
+
