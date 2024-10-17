@@ -43,8 +43,8 @@ pip3 install ./dist/ldpymod-0.1-cp312-cp312-linux_x86_64.whl
 
 # Content of the repository
 
-MANIFEST.in - what belongs into package (needed due to header files)
-pyproject.toml - how to build and pack (and test) the package
-src/* - source codes
-doc/* - configuration for sphinx
-
+* MANIFEST.in - what belongs into package (needed due to header files)
+* pyproject.toml - how to build and pack (and test) the package
+* src/* - source codes
+* docs/* - configuration for sphinx
+* linuxdays24-presentation - helpers for the presentation and evaluation
